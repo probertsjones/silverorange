@@ -9,6 +9,7 @@ use silverorange\DevTest\Model;
 class PostDetails extends Controller
 {
     private ?Model\Post $post = null;
+    public $selectQuery; // For debugging output
 
     public function getContext(): Context
     {
@@ -16,7 +17,7 @@ class PostDetails extends Controller
 
         if ($this->post === null) {
             $context->title = 'Not Found';
-            $context->content = "A post with id {$this->params[0]} was not found.";
+            $context->content = "A post with id {$this->params[0]} was not found." . $this->selectQuery;
         } else {
             $context->title = $this->post->title;
         }
@@ -45,6 +46,19 @@ class PostDetails extends Controller
     protected function loadData(): void
     {
         // TODO: Load post from database here. $this->params[0] is the post id.
-        $this->post = null;
+
+        $this->selectQuery = "SELECT * FROM posts WHERE id = :id";
+        $selectRun = $this->db->prepare($this->selectQuery);
+        $selectRun->bindValue(':id', $this->params[0]);
+        $selectOutput = $selectRun->fetch();
+
+        if (!$selectOutput) {
+            $this->post = null;
+        } else {
+            foreach($selectOutput as $post) {
+                $this->post = $post;
+            }
+        }
+
     }
 }
