@@ -10,9 +10,11 @@ class PostDetails extends Layout
     {
         // @codingStandardsIgnoreStart
         return <<<HTML
-<p>SHOW CONTENT FOR {$context->getPostId()} HERE</p>
-
-<div>{$context->getPostBodyRaw()}</div>
+        <h1 class="post-title">{$context->getPostTitle()}</h1>
+        <div class="post-content-meta">
+            By: {$context->getPostAuthorName()} @ {$context->getPostCreatedDate()}
+        </div>
+        <div class="post-content">{$context->getPostBodyHTML()}</div>
 
 HTML;
         // @codingStandardsIgnoreEnd

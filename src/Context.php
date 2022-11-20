@@ -4,6 +4,17 @@ namespace silverorange\DevTest;
 
 class Context
 {
+
+    // public $Parsedown = new Parsedown();
+
+    public string $title = '';
+    public string $content = '';
+    public string $body = '';
+    public string $created_at = '';
+    public string $modified_at = '';
+    public string $author = '';
+    public string $author_full_name = '';
+
     // TODO: You can add more properties to this class to pass values to templates
 
     public function getPostId() {
@@ -16,6 +27,12 @@ class Context
     
     public function getPostBodyRaw() {
         return $this->body;
+    }
+
+    public function getPostBodyHTML() {
+        $Parsedown = new \Parsedown();
+        return $Parsedown->text($this->body);
+
     }
     
     public function getPostCreatedDate() {
@@ -33,8 +50,5 @@ class Context
     public function getPostAuthorName() {
         return $this->author_full_name;
     }
-
-    public string $title = '';
-
-    public string $content = '';
+    
 }

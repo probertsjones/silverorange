@@ -19,15 +19,14 @@ class PostDetails extends Controller
             $context->title = 'Not Found';
             $context->content = "A post with id {$this->params[0]} was not found.<br>";
         } else {
-            $context->id = $this->post->id;
 
-            $context->title = $this->post->id;
+            $context->id = $this->post->id;
             $context->title = $this->post->title;
-            $context->title = $this->post->body;
-            $context->title = $this->post->created_at;
-            $context->title = $this->post->modified_at;
-            $context->title = $this->post->author;
-            $context->title = $this->post->author_full_name;
+            $context->body = $this->post->body;
+            $context->created_at = $this->post->created_at;
+            $context->modified_at = $this->post->modified_at;
+            $context->author = $this->post->author;
+            $context->author_full_name = $this->post->author_full_name;
 
         }
 
