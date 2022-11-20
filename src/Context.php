@@ -55,8 +55,15 @@ class Context
     }
 
     public function listPosts($format,$posts) {
-        foreach ($posts as $section => $post) {
-            $output .= str_replace($section,$post[$section],$format);
+        $output = "";
+        if (is_array($posts)) {
+            foreach ($posts as $post) {
+                $outputLoop = $format;
+                foreach ($post as $section => $content) {
+                    $outputLoop = str_replace("{".$section."}",$content,$outputLoop);
+                }
+                $output .= $outputLoop;
+            }
         }
         return $output;
     }

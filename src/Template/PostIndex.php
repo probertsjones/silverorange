@@ -15,9 +15,9 @@ class PostIndex extends Layout
         // @codingStandardsIgnoreStart
         return <<<HTML
         <h1>Latest Posts</h1>
-        <ul>
-            {{$context->listPosts($listFormat,$context->getPosts())}}
-        </ul>
+        <pre>
+            {$context->listPosts($listFormat,$context->getPosts())}
+    </pre>
 HTML;
         // @codingStandardsIgnoreEnd
     }
