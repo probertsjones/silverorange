@@ -4,7 +4,6 @@ namespace silverorange\DevTest;
 
 class Context
 {
-
     public array $posts = [];
     public string $title = '';
     public string $content = '';
@@ -14,58 +13,64 @@ class Context
     public string $author = '';
     public string $author_full_name = '';
 
-    // TODO: You can add more properties to this class to pass values to templates
-
-    public function getPostId() {
+    public function getPostId()
+    {
         return $this->id;
     }
 
-    public function getPostTitle() {
+    public function getPostTitle()
+    {
         return $this->title;
     }
-    
-    public function getPostBodyRaw() {
+
+    public function getPostBodyRaw()
+    {
         return $this->body;
     }
 
-    public function getPostBodyHTML() {
+    public function getPostBodyHTML()
+    {
         $Parsedown = new \Parsedown();
         return $Parsedown->text($this->body);
-
     }
-    
-    public function getPostCreatedDate() {
+
+    public function getPostCreatedDate()
+    {
         return $this->created_at;
     }
-    
-    public function getPostModifiedDate() {
+
+    public function getPostModifiedDate()
+    {
         return $this->modified_at;
     }
-    
-    public function getPostAuthorId() {
+
+    public function getPostAuthorId()
+    {
         return $this->author;
     }
-    
-    public function getPostAuthorName() {
+
+    public function getPostAuthorName()
+    {
         return $this->author_full_name;
     }
 
-    public function getPosts() {
+    public function getPosts()
+    {
         return $this->posts;
     }
 
-    public function listPosts($format,$posts) {
+    public function listPosts($format, $posts)
+    {
         $output = "";
         if (is_array($posts)) {
             foreach ($posts as $post) {
                 $outputLoop = $format;
                 foreach ($post as $section => $content) {
-                    $outputLoop = str_replace("{".$section."}",$content,$outputLoop);
+                    $outputLoop = str_replace("{" . $section . "}", $content, $outputLoop);
                 }
                 $output .= $outputLoop;
             }
         }
         return $output;
     }
-    
 }
