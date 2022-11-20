@@ -5,8 +5,7 @@ namespace silverorange\DevTest;
 class Context
 {
 
-    // public $Parsedown = new Parsedown();
-
+    public array $posts = [];
     public string $title = '';
     public string $content = '';
     public string $body = '';
@@ -49,6 +48,17 @@ class Context
     
     public function getPostAuthorName() {
         return $this->author_full_name;
+    }
+
+    public function getPosts() {
+        return $this->posts;
+    }
+
+    public function listPosts($format,$posts) {
+        foreach ($posts as $section => $post) {
+            $output .= str_replace($section,$post[$section],$format);
+        }
+        return $output;
     }
     
 }
