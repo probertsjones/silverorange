@@ -112,7 +112,7 @@ main {
   padding: 0.5rem;
 }
 
-
+/* Checkbox list */
 dl.checkbox {
   display: flex;
 }
@@ -127,4 +127,9 @@ dl.checkbox dd {
 }
 dl.checkbox input, dl.checkbox label {
   cursor: pointer;
+}
+
+/* Product image CSS */
+.product-thumbnail {
+  border-radius: 5px;
 }
