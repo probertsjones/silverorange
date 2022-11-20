@@ -118,7 +118,7 @@ dl.checkbox {
 }
 dl.checkbox dt {
   width: 20px;
-  margin: 0 5px;
+  margin: 0 0.125rem;
 }
 dl.checkbox dd {
   margin: 0;
@@ -131,5 +131,27 @@ dl.checkbox input, dl.checkbox label {
 
 /* Product image CSS */
 .product-thumbnail {
-  border-radius: 5px;
+  border-radius: 0.25rem;
+  box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 10%);  
+}
+
+/* Button CSS */
+.place-order {
+  text-align: center;
+}
+.btn-place-order {
+  font-size: 2em;
+  color:#444;
+  cursor: pointer;
+  padding: 0.25em 0.5em;
+  border:#999 solid;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.03); 
+  transition: 0.25s;
+}
+
+.btn-place-order:hover {
+  /* box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 10%);   */
+  box-shadow: 0 0.5em 0.5em -0.4em rgba(0, 0, 0, 0.5);
+  transform: translateY(-0.125em);
 }
