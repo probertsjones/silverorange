@@ -155,3 +155,32 @@ dl.checkbox input, dl.checkbox label {
   box-shadow: 0 0.5em 0.5em -0.4em rgba(0, 0, 0, 0.5);
   transform: translateY(-0.125em);
 }
+
+/* Post Styles */
+.post {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.post a {
+  text-decoration: none;
+}
+
+.post a:hover {
+  text-decoration: underline;
+}
+
+.post-content-meta {
+  width: 100%;
+  border-top:1px solid #999;
+  padding: 1em 0 0 0;
+  font-size: 0.8em;
+}
+.post-author {
+  font-style: italic;
+}
+.post-footer {
+  width: 100%;
+  border-top:1px solid #999;
+  padding: 1em 0 0 0;
+  font-size: 0.8em;
+}
