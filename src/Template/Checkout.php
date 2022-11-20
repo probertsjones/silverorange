@@ -35,6 +35,11 @@ class Checkout extends Layout
                                     </tr>
                                 </tbody>
                             </table>
+
+                            <dl class="checkbox">
+                                <dt><input type="checkbox" id="beta_signup" name="beta_signup" value="beta"></dt>
+                                <dd><label for="beta_signup">With our &#8223;Rise & Shine&#8221; beta program, you get early access to new features, but they may not always work perfectly. You can change your beta preference at any time after you join.</label></dd>
+                            </dl>
                         </div>
                     </div>
                     <div class="frame">

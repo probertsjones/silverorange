@@ -111,3 +111,20 @@ main {
   border-bottom: 1px solid #eee;
   padding: 0.5rem;
 }
+
+
+dl.checkbox {
+  display: flex;
+}
+dl.checkbox dt {
+  width: 20px;
+  margin: 0 5px;
+}
+dl.checkbox dd {
+  margin: 0;
+  font-size: 0.7em;
+  color: #888;
+}
+dl.checkbox input, dl.checkbox label {
+  cursor: pointer;
+}
