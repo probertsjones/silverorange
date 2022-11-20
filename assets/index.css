@@ -184,3 +184,24 @@ dl.checkbox input, dl.checkbox label {
   padding: 1em 0 0 0;
   font-size: 0.8em;
 }
+.post-list {
+  list-style-type: none;
+  padding: 0;
+}
+.post-list a {
+  font-weight: bold;
+  font-size: 1.5em;
+  text-decoration: none;
+}
+
+.post-list a:hover {
+  text-decoration: underline;
+}
+
+.post-list-meta {
+  font-size: 0.8em;
+}
+
+.post-list li {
+  margin-bottom: 1em;
+}

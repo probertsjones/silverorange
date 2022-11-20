@@ -9,15 +9,17 @@ class PostIndex extends Layout
     protected function renderPage(Context $context): string
     {
 
-        $listFormat = '<li><a href="/posts/{id}">{title}</a><br>By: {author_full_name} @ {created_at}</li>';
+        $listFormat = '<li class="post-list-meta"><a href="/posts/{id}">{title}</a><br>By: {author_full_name} @ {created_at}</li>';
 
 
         // @codingStandardsIgnoreStart
         return <<<HTML
-        <h1>Latest Posts</h1>
-        <pre>
-            {$context->listPosts($listFormat,$context->getPosts())}
-    </pre>
+        <div class="post">
+            <h1>Latest Posts</h1>
+            <ul class="post-list">
+                {$context->listPosts($listFormat,$context->getPosts())}
+            </ul>
+        </div>
 HTML;
         // @codingStandardsIgnoreEnd
     }
