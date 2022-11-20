@@ -11,6 +11,9 @@ class PostDetails extends Layout
         // @codingStandardsIgnoreStart
         return <<<HTML
 <p>SHOW CONTENT FOR {$context->getPostId()} HERE</p>
+
+<div>{$context->getPostBodyRaw()}</div>
+
 HTML;
         // @codingStandardsIgnoreEnd
     }
